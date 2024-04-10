@@ -8,9 +8,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        .card-img {
-            width: 100%; /* Réglez la largeur souhaitée ici */
-            height: 250%; /* Pour maintenir les proportions de l'image */
+        .card-custom {
+            height: 400px; /* Définir une hauteur fixe pour les cartes */
+        }
+        .card-img-custom {
+            object-fit: cover; /* Assurez que l'image couvre entièrement la zone définie */
+            width: 100%;
+            height: 200px; /* Hauteur de l'image à l'intérieur de la carte */
         }
     </style>
 </head>
@@ -23,13 +27,40 @@
     </header>
     <main>
         
-        <div class="card" style="width: 18rem;">
-            <img src="images\poulet-aux-herbes.jpg" class="card-img" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Poulet rôti aux herbes</h5>
-                <p class="card-text">Plat principal, Temps de préparation: 1h</p>
-                <a href="#" class="btn btn-primary">Voir Recette</a>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card m-3 card-custom">
+                    <img src="images\poulet-aux-herbes.jpg" class="card-img card-img-custom" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Poulet rôti aux herbes</h5>
+                        <p class="card-text">Plat principal, Temps de préparation: 1h</p>
+                        <a href="#" class="btn btn-primary">Voir Recette</a>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-4">
+                <div class="card m-3 card-custom">
+                    <img src="images\salade-de-legumes-grilles-et-quinoa.jpg" class="card-img card-img-custom" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Salade de quinoa aux légumes grillés</h5>
+                        <p class="card-text">Entrée, Temps de préparation: 30min</p>
+                        <a href="#" class="btn btn-primary">Voir Recette</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card m-3 card-custom">
+                    <img src="images\tarte-aux-pommes.jpg" class="card-img card-img-custom" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tarte aux pommes</h5>
+                        <p class="card-text">Dessert, Temps de préparation: 1H</p>
+                        <a href="#" class="btn btn-primary">Voir Recette</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
         </div>
     </main>
     <footer>
