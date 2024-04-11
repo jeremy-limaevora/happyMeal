@@ -5,3 +5,356 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+
+
+ /* Popup container */
+ .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 
+
+/* card */
+.card {
+  width: 300px;
+  position: relative;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.card::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  bottom: 15px;
+  right: 0;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg);
+  transition: all 0.1s ease-in;
+}
+
+.card::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  bottom: 15px;
+  left: 0;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transform: rotate(-5deg);
+  transition: all 0.1s ease-in;
+}
+
+.card:hover:before, .card:hover:after {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover:before {
+  transform: rotate(-8deg);
+}
+
+.card:hover:after {
+  transform: rotate(8deg);
+}
+
+.card__img {
+  position: relative;
+  background: #a62a00;
+  background: linear-gradient(315deg, #ff7d7d, #a62a00);
+  width: 100%;
+  height: 175px;
+}
+
+.card__span {
+  cursor: pointer;
+  font-size: 11px;
+  position: absolute;
+  background-color: white;
+  top: 10px;
+  left: 10px;
+  padding: 3px 7px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease-in;
+  user-select: none;
+}
+
+.card__span:hover {
+  transform: translateX(5px);
+}
+
+.card-int {
+  padding: 20px 0 0 0;
+}
+
+.card-int__title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.card-int__button {
+  cursor: pointer;
+  margin: 20px 0 0 0;
+  padding: 7px 20px;
+  width: 100%;
+  background-color: rgb(255, 239, 238);
+  border: none;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.1s ease-in;
+  user-select: none;
+}
+
+.card-int__button:active {
+  box-shadow: 0px 0px 15px rgba(0, 119, 255, 0.5);
+}
+
+.card-int__button:hover::before {
+  animation: effect_two 0.4s 1;
+}
+
+.card-int__button::before {
+  content: 'More for this article';
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #a62a00;
+  background: linear-gradient(315deg, #ff7d7d, #a62a00);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-99%);
+  z-index: 1;
+  animation: effect_one 10s infinite;
+}
+
+.card-int__button:hover::before {
+  transform: translateX(0%);
+}
+
+.excerpt {
+  font-size: 14px;
+}
+
+@keyframes effect_one {
+  0% {
+    transform: translateX(-99%);
+  }
+
+  25% {
+    transform: translateX(-90%);
+  }
+
+  50% {
+    transform: translateX(-80%);
+  }
+
+  75% {
+    transform: translateX(-95%);
+  }
+
+  100% {
+    transform: translateX(-99%);
+  }
+}
+
+@keyframes effect_two {
+  to {
+    transform: translateX(-1%);
+  }
+
+  from {
+    transform: translateX(-99%);
+  }
+}
+
+/* button */ 
+
+
+.btn-23,
+.btn-23 *,
+.btn-23 :after,
+.btn-23 :before,
+.btn-23:after,
+.btn-23:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-23 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-23:disabled {
+  cursor: default;
+}
+
+.btn-23:-moz-focusring {
+  outline: auto;
+}
+
+.btn-23 svg {
+  display: block;
+vertical-align: middle;
+}
+
+.btn-23 [hidden] {
+  display: none;
+}
+
+.btn-23 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+
+.btn-23 span {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.btn-23 .marquee {
+  --spacing: 5em;
+  --start: 0em;
+  --end: 5em;
+  -webkit-animation: marquee 1s linear infinite;
+  animation: marquee 1s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+}
+
+.btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.btn-23:hover .text {
+  opacity: 0;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+/* search */ 
+input {
+  width: 100%;
+  padding: 10px;
+  
+  &.search-input {
+    margin: 0;
+    text-align: center;
+    outline:0;
+    border: 10px solid #F7F7F7;
+    width: 120%;
+    left: -10%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    border-radius: 5px;
+    font-size: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  }
+}
+
+#recettes-list {
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
