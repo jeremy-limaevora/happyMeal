@@ -60,8 +60,44 @@ document
   .getElementById('search')
   .addEventListener('input', () => searchnom(search.value));
 
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
 
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
+    // Vider le contenu précédent du popup
+    const popupContent = popup.querySelector('.card-int');
+    popupContent.innerHTML = ''; // Cela supprime tout le contenu HTML existant
+
+    // Charger les données des recettes
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Sélectionner un plat aléatoire
+            const randomIndex = Math.floor(Math.random() * data.recettes.length);
+            const recette = data.recettes[randomIndex];
+
+            // Créer et ajouter le titre du plat
+            const title = document.createElement('p');
+            title.classList.add('card-int__title');
+            title.textContent = recette.nom;
+            popupContent.appendChild(title);
+
+            // Créer et ajouter le temps de préparation
+            const excerpt = document.createElement('p');
+            excerpt.classList.add('excerpt');
+            excerpt.textContent = `Temps de préparation : ${recette.temps_preparation}`;
+            popupContent.appendChild(excerpt);
+
+            // Créer une liste des ingrédients
+            let ingredientsList = '';
+            recette.ingredients.forEach(ingredient => {
+                ingredientsList += `<li>${ingredient.nom} - ${ingredient.quantite}</li>`;
+            });
+
+            // Créer et ajouter un conteneur pour la liste des ingrédients
+            const ingredientsContainer = document.createElement('ul');
+            ingredientsContainer.innerHTML = ingredientsList;
+            popupContent.appendChild(ingredientsContainer);
+        })
+        .catch(error => console.error('Erreur lors du chargement des données:', error));
 }
