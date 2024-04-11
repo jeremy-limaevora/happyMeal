@@ -59,3 +59,9 @@ const outputHtml = fits => {
 document
   .getElementById('search')
   .addEventListener('input', () => searchnom(search.value));
+
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
