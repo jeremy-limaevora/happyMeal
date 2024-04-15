@@ -1,19 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Sélection des éléments du DOM
     const recettesContainer = document.getElementById("recettes");
     const paginationContainer = document.getElementById("pagination");
     const sidenav = document.getElementById("mySidenav");
     const openBtn = document.getElementById("openBtn");
     const closeBtn = document.getElementById("closeBtn");
-    const afficherFavorisBtnBurger = document.getElementById("afficherFavorisBtnBurger"); // Nouveau bouton ajouté pour les favoris dans le burger
+    const afficherFavorisBtnBurger = document.getElementById("afficherFavorisBtnBurger"); // Bouton pour afficher les favoris dans le burger
 
+    // Configuration de la pagination
     const recettesPerPage = 9;
     let currentPage = 1;
     let recettesData = [];
 
+    // Fonction pour appliquer des styles à un élément
     function applyStyles(element, styles) {
         Object.assign(element.style, styles);
     }
 
+    // Fonction pour faire apparaître un élément avec un effet de fondu
     function fadeIn(element) {
         element.style.opacity = 0;
         let opacity = 0;
@@ -27,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 50);
     }
 
+    // Fonction pour afficher les recettes sur la page
     function displayRecettes(pageNumber, recettes) {
         recettesContainer.innerHTML = "";
         const startIndex = (pageNumber - 1) * recettesPerPage;
@@ -57,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Fonction pour formater les ingrédients
     function formatIngredient(ingredient) {
         if (typeof ingredient === 'string') {
             return `<li>${ingredient}</li>`;
@@ -65,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Fonction pour configurer la pagination
     function setupPagination(totalRecettes) {
         paginationContainer.innerHTML = "";
 
@@ -91,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Chargement des données JSON
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
@@ -100,11 +108,14 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Erreur lors du chargement des données JSON:", error));
 
+    // Gestion des événements pour ouvrir et fermer la navigation latérale
     openBtn.onclick = openNav;
     closeBtn.onclick = closeNav;
 
-    afficherFavorisBtnBurger.onclick = afficherFavoris; // Lier le bouton "Afficher les favoris" du burger à la fonction afficherFavoris
+    // Lier le bouton "Afficher les favoris" du burger à la fonction afficherFavoris
+    afficherFavorisBtnBurger.onclick = afficherFavoris;
 
+    // Fonctions pour ouvrir et fermer la navigation latérale
     function openNav() {
         sidenav.classList.add("active");
     }
@@ -113,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sidenav.classList.remove("active");
     }
 
+    // Fonction pour ajouter une recette aux favoris
     function ajouterAuxFavoris(recette) {
         let favoris = JSON.parse(localStorage.getItem('favoris')) || [];
         if (favoris.includes(recette)) {
@@ -124,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Fonction pour afficher les recettes favorites
     function afficherFavoris() {
         let favoris = JSON.parse(localStorage.getItem('favoris')) || [];
         if (favoris.length === 0) {

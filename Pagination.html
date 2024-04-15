@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Déclaration du type de document et du langage de la page -->
     <meta charset="UTF-8">
+    <!-- Configuration de la vue pour les appareils mobiles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page visible dans l'onglet du navigateur -->
     <title>Affichage des recettes</title>
-    <!-- Bootstrap CSS -->
+    <!-- Importation du CSS de Bootstrap pour le style -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <!-- Importation du CSS personnalisé pour la pagination -->
     <link rel="stylesheet" href="pagination.css">
 </head>
 <body>
-    <img class="waaza" src="happymeal.png" alt="image de titre"> <!-- Déplacer l'image ici -->
+    <!-- Image de titre déplacée en haut de la page -->
+    <img class="waaza" src="happymeal.png" alt="image de titre">
     <header>
+        <!-- Titre principal de la page -->
         <h1 class="titre">Recettes (JSON)</h1>
+        <!-- Navigation latérale (sidenav) -->
         <div id="mySidenav" class="sidenav">
+            <!-- Bouton pour fermer la navigation latérale -->
             <a id="closeBtn" href="#" class="close">×</a>
             <ul>
-                <img src="logo (1).png" alt="logo">
+                <!-- Logo de la navigation latérale -->
+                <img src="LOGO.png" alt="logo">
+                <!-- Lien vers la page d'accueil -->
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="pagination.html">Recettes  Json</a></li>
+                <!-- Lien vers la page des recettes JSON -->
+                <li><a href="pagination.html">Recettes Json</a></li>
+                <!-- Lien vers une autre page de recettes (peut être redondant) -->
                 <li><a href="index.html">Recettes</a></li>
-                <li><a id="afficherFavorisBtnBurger" href="#">Afficher les favoris</a></li> <!-- Bouton ajouté pour afficher les favoris -->
+                <!-- Bouton pour afficher les favoris dans la navigation latérale -->
+                <li><a id="afficherFavorisBtnBurger" href="#">Afficher les favoris</a></li>
+                <!-- Lien vers un calendrier de Google pour la planification de repas -->
                 <li><a href="https://calendar.google.com/calendar/u/0/r/appointment">Planification de repas</a></li>
             </ul>
         </div>
+        <!-- Bouton pour ouvrir la navigation latérale -->
         <a href="#" id="openBtn">
             <span class="burger-icon">
                 <span></span>
@@ -33,18 +47,22 @@
         </a>
     </header>
     <main>
+        <!-- Conteneur principal pour les recettes et la pagination -->
         <div class="container">
+            <!-- Zone pour afficher les recettes -->
             <div id="recettes" class="row"></div>
+            <!-- Zone pour la pagination -->
             <div id="pagination" class="row justify-content-center"></div>
+            <!-- Bouton pour afficher les favoris -->
             <button id="afficherFavorisBtn" class="btn btn-primary">Afficher les favoris</button>
         </div>
     </main>
 
-    <!-- Bootstrap JS -->
+    <!-- Importation du JS de Bootstrap pour les fonctionnalités interactives -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Importation du JS personnalisé pour la pagination -->
     <script src="pagination.js"></script>
 </body>
 </html>
