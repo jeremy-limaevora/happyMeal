@@ -10,16 +10,44 @@
     <link rel="stylesheet" href="pagination.css">
 </head>
 <body>
-    <div class="container">
-        <div id="recettes" class="row"></div>
-        <div id="pagination" class="row justify-content-center"></div>
-    </div>
+    <header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="pagination.js"></script>
+
+
+      <h1 class="titre">Recettes (JSON)</h1>
+
+        <div id="mySidenav" class="sidenav">
+            <a id="closeBtn" href="#" class="close">×</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="pagination.html">Recettes  Json</a></li>
+                <li><a href="index.html">Recettes</a></li>
+            </ul>
+        </div>
+
+
+        
+
+        <a href="#" id="openBtn">
+            <span class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+    </header>
+    <main>
+        <div class="container">
+            <div id="recettes" class="row"></div>
+            <div id="pagination" class="row justify-content-center"></div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Custom JS -->
+        <script src="pagination.js"></script>
+    </main>
 </body>
 </html>

@@ -1,55 +1,175 @@
-/* Styles CSS pour le texte */
-
+/* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: #333;
 }
 
+.titre {
+    text-align: center;
+    background: linear-gradient(to right, #8B4513, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Standard property for text fill color */
+    margin-top: 20px; /* Ajout d'une marge en haut de 20 pixels */
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    background: linear-gradient(to right, #8B4513, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
 h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
 h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
+/* Paragraphes */
 p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
+/* Listes */
 ul, ol {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    list-style: none; /* Pour enlever les puces et les numéros de liste */
-    padding-left: 0; /* Pour enlever le padding par défaut */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 0;
 }
 
 li {
     margin-left: 20px;
 }
 
+/* Pagination */
 #pagination {
-    margin-top: 20px;
-    text-align: center; /* Centrer les boutons de pagination */
+    margin-top: 30px;
+    text-align: center;
 }
 
 #pagination button {
     margin: 0 5px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #a62a00; /* Bouton de pagination en couleur #a62a00 */
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* Ajout d'une transition pour un effet de survol */
+    transition: background-color 0.3s ease;
 }
 
 #pagination button:hover {
-    background-color: #0056b3; /* Changement de couleur au survol */
+    background-color: #7d1c00; /* Changement de couleur au survol */
 }
+
+/* Styles pour les recettes */
+.recette {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les ingrédients */
+.recette ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.recette li {
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+/* Styles pour l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+
+/* Sidenav menu */
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -250px; /* Modifier la position à droite */
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transition: right 0.5s ease; /* Transition à droite */
+  }
+  
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #111;
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    right: 0; /* Modifier la position à droite */
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+ /* Icône burger */
+.burger-icon {
+    position: fixed;
+    top: 20px; /* Ajustez selon votre préférence */
+    right: 20px; /* Ajustez selon votre préférence */
+}
+
+.burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
