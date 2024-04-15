@@ -10,24 +10,20 @@
     <link rel="stylesheet" href="pagination.css">
 </head>
 <body>
+    <img class="waaza" src="happymeal.png" alt="image de titre"> <!-- Déplacer l'image ici -->
     <header>
-
-
-
-      <h1 class="titre">Recettes (JSON)</h1>
-
+        <h1 class="titre">Recettes (JSON)</h1>
         <div id="mySidenav" class="sidenav">
             <a id="closeBtn" href="#" class="close">×</a>
             <ul>
+                <img src="logo (1).png" alt="logo">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="pagination.html">Recettes  Json</a></li>
                 <li><a href="index.html">Recettes</a></li>
+                <li><a id="afficherFavorisBtnBurger" href="#">Afficher les favoris</a></li> <!-- Bouton ajouté pour afficher les favoris -->
+                <li><a href="https://calendar.google.com/calendar/u/0/r/appointment">Planification de repas</a></li>
             </ul>
         </div>
-
-
-        
-
         <a href="#" id="openBtn">
             <span class="burger-icon">
                 <span></span>
@@ -40,14 +36,15 @@
         <div class="container">
             <div id="recettes" class="row"></div>
             <div id="pagination" class="row justify-content-center"></div>
+            <button id="afficherFavorisBtn" class="btn btn-primary">Afficher les favoris</button>
         </div>
-
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <!-- Custom JS -->
-        <script src="pagination.js"></script>
     </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="pagination.js"></script>
 </body>
 </html>

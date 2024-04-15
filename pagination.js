@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sidenav = document.getElementById("mySidenav");
     const openBtn = document.getElementById("openBtn");
     const closeBtn = document.getElementById("closeBtn");
+    const afficherFavorisBtnBurger = document.getElementById("afficherFavorisBtnBurger"); // Nouveau bouton ajouté pour les favoris dans le burger
 
     const recettesPerPage = 9;
     let currentPage = 1;
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayedRecettes.forEach((recette, index) => {
             const recetteElement = document.createElement("div");
             recetteElement.classList.add("recette");
-            recetteElement.style.opacity = 0; // Commence avec une opacité de 0
+            recetteElement.style.opacity = 0;
             recetteElement.innerHTML = `
                 <h2>${recette.nom}</h2>
                 <p><strong>Catégorie:</strong> ${recette.categorie}</p>
@@ -50,10 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 </ol>
             `;
             recettesContainer.appendChild(recetteElement);
-            // Appliquer l'effet de fondu
             setTimeout(() => {
                 fadeIn(recetteElement);
-            }, 200 * index); // Délai pour chaque recette
+            }, 200 * index);
         });
     }
 
@@ -103,13 +103,33 @@ document.addEventListener("DOMContentLoaded", function() {
     openBtn.onclick = openNav;
     closeBtn.onclick = closeNav;
 
-    /* Set the width of the side navigation to 250px */
+    afficherFavorisBtnBurger.onclick = afficherFavoris; // Lier le bouton "Afficher les favoris" du burger à la fonction afficherFavoris
+
     function openNav() {
         sidenav.classList.add("active");
     }
 
-    /* Set the width of the side navigation to 0 */
     function closeNav() {
         sidenav.classList.remove("active");
+    }
+
+    function ajouterAuxFavoris(recette) {
+        let favoris = JSON.parse(localStorage.getItem('favoris')) || [];
+        if (favoris.includes(recette)) {
+            alert("Cette recette est déjà dans vos favoris !");
+        } else {
+            favoris.push(recette);
+            localStorage.setItem('favoris', JSON.stringify(favoris));
+            alert("Recette ajoutée aux favoris !");
+        }
+    }
+
+    function afficherFavoris() {
+        let favoris = JSON.parse(localStorage.getItem('favoris')) || [];
+        if (favoris.length === 0) {
+            alert("Vous n'avez ajouté aucune recette aux favoris !");
+        } else {
+            alert("Vos recettes favorites :\n" + favoris.join("\n"));
+        }
     }
 });

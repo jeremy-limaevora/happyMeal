@@ -1,6 +1,6 @@
 /* Styles généraux */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Candara, sans-serif; 
     line-height: 1.6;
     color: #333;
 }
@@ -11,9 +11,32 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent; /* Standard property for text fill color */
-    margin-top: 20px; /* Ajout d'une marge en haut de 20 pixels */
+    color: transparent;
+    margin-top: 70px; /* Ajout d'une marge en haut de 70 pixels */
+    margin-bottom: 90px; /* Ajout d'une marge en bas de 20 pixels */
 }
+
+img {
+    max-width: 100%; /* Pour que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Pour maintenir le ratio hauteur/largeur de l'image */
+    display: block; /* Pour éviter les marges supplémentaires dues à l'élément inline */
+    margin: 0 auto; /* Pour centrer l'image horizontalement */
+    margin-top: 20px; /* Ajout d'une marge en haut de l'image */
+    
+}
+
+
+
+
+.waaza {
+    max-width: 100%; /* Pour que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Pour maintenir le ratio hauteur/largeur de l'image */
+    display: block; /* Pour éviter les marges supplémentaires dues à l'élément inline */
+    margin: 0 auto; /* Pour centrer l'image horizontalement */
+    margin-top: 20px; /* Ajout d'une marge en haut de l'image */  
+}
+
+
 
 
 h1, h2, h3, h4, h5, h6 {
